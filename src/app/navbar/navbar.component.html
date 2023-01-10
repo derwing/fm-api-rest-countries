@@ -9,7 +9,7 @@
     </div>
 </p-menubar>
 <p-menubar class="mt-5 pt-5" id="p-menu-secondary" [ngClass]="{'bg-white': !darkModeStatus}">
-    <div class="" [ngClass]="{'flex justify-content-between': isMobile}">
+    <div class="" [ngClass]="{'flex justify-content-between': !isMobile}">
         <div class="" [ngClass]="{'flex': !isMobile, 'mb-4': isMobile}">
             <span class="p-input-icon-left">
                 <i class="pi pi-search ml-5"></i>

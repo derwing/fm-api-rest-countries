@@ -56,11 +56,11 @@ export class NavbarComponent implements OnInit {
       'europe',
       'oceania',
     ];
+    this.detectDevice();
 
   }
 
   ngOnInit() {
-    this.detectDevice();
   }
 
   detectDevice() {
