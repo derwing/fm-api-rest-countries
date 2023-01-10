@@ -1,0 +1,23 @@
+<p-menubar class="bg-white" id="p-menu-top">
+    <div class="flex justify-content-between">
+        <div class="flex ">
+            <h2 class="px-5">Where in the world?</h2>
+        </div>
+        <div class="flex">
+            <h3 class="px-5"><i class="pi pi-moon mr-2"></i>Dark Mode</h3>
+        </div>
+    </div>
+</p-menubar>
+<p-menubar class="mt-5 pt-5" id="p-menu-secondary">
+    <div class="flex justify-content-between">
+        <div class="flex">
+            <span class="p-input-icon-left">
+                <i class="pi pi-search ml-5"></i>
+                <input class="px-5 ml-5" type="text" pInputText placeholder="Search for a country..." (keyup)="searchCountry(country.value)" #country>
+            </span>
+        </div>
+        <div class="flex">
+            <p-dropdown class="px-5" [options]="region" [(ngModel)]="selectedRegion" (onChange)="getSelecteRegion()"></p-dropdown>
+        </div>
+    </div>
+</p-menubar>

@@ -1,0 +1,29 @@
+<section class="list-countries">
+    <div class="grid mx-5 mt-2">
+        <div *ngIf="selectedCountry" class="col-12 md:col-6 lg:col-3 animate__animated animate__heartBeat">
+            <p-card *ngIf="!isLoading" [header]="selectedCountry.name.official" class="mt-2" [style]="{width: '260px'}" styleClass="shadow-2">
+                <ng-template pTemplate="header">
+                    <img class="border-round-top-sm" alt="flag" [src]="selectedCountry.flags.png" height="150px">
+                </ng-template>
+                <ul>
+                    <li class="list-none"><span class="font-bold">Population:</span> {{selectedCountry.population}}</li>
+                    <li class="list-none"><span class="font-bold">Region:</span> {{selectedCountry.region}}</li>
+                    <li class="list-none"><span class="font-bold">Capital:</span> {{selectedCountry.capital}}</li>
+                </ul>
+            </p-card>
+        </div>
+        <div *ngFor="let country of allCountriesView" class="col-12 md:col-6 lg:col-3 animate__animated animate__backInLeft">
+            <p-card *ngIf="!isLoading" [header]="country.name.official" class="mt-2 " [style]="{width: '260px'}" styleClass="shadow-2">
+                <ng-template pTemplate="header">
+                    <img class="border-round-top-sm" alt="flag" [src]="country.flags.png" height="150px">
+                </ng-template>
+                <ul>
+                    <li class="list-none"><span class="font-bold">Population:</span> {{country.population}}</li>
+                    <li class="list-none"><span class="font-bold">Region:</span> {{country.region}}</li>
+                    <li class="list-none"><span class="font-bold">Capital:</span> {{country.capital}}</li>
+                </ul>
+            </p-card>
+        </div>
+    </div>
+
+</section>
