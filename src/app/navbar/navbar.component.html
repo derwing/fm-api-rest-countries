@@ -17,7 +17,7 @@
             </span>
         </div>
         <div class="" [ngClass]="{'flex': !isMobile}">
-            <p-dropdown class="px-5" [options]="region" [(ngModel)]="selectedRegion" (onChange)="getSelecteRegion()"></p-dropdown>
+            <p-dropdown class="px-5" [options]="region" [(ngModel)]="selectedRegion" (onChange)="getSelecteRegion()" placeholder="Filter by Region"></p-dropdown>
         </div>
     </div>
 </p-menubar>

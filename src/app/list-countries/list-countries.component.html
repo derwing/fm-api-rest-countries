@@ -1,7 +1,7 @@
 <section class="list-countries">
     <div class="grid mx-5 mt-2">
         <div *ngIf="selectedCountry" class="col-12 md:col-6 lg:col-3 animate__animated animate__heartBeat">
-            <p-card *ngIf="!isLoading" [header]="selectedCountry.name.official" class="mt-2" [style]="{width: '260px'}" styleClass="shadow-2">
+            <p-card *ngIf="!isLoading" [header]="selectedCountry.name.common" class="mt-2" [style]="{width: '260px'}" styleClass="shadow-2">
                 <ng-template pTemplate="header">
                     <img class="border-round-top-sm" alt="flag" [src]="selectedCountry.flags.png" height="150px">
                 </ng-template>

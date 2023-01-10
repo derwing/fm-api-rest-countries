@@ -50,11 +50,11 @@ export class NavbarComponent implements OnInit {
     ];
 
     this.region = [
-      'americas',
-      'africa',
-      'asia',
-      'europe',
-      'oceania',
+      'Americas',
+      'Africa',
+      'Asia',
+      'Europe',
+      'Oceania',
     ];
     this.detectDevice();
 
