@@ -8,7 +8,15 @@
 
 body {
     margin: 0;
-    background-color: rgb(245, 242, 242);
+    background-color: rgb(255, 252, 252);
+}
+
+.dark-mode {
+    background-color: #071426;
+}
+
+.dark-mode .p-card {
+    background-color: #0b2242;
 }
 
 #p-menu-top>.p-menubar {
@@ -17,8 +25,11 @@ body {
     box-shadow: 0px 8px 6px -3px rgba(0, 0, 0, 0.13);
     border-radius: 0!important;
     box-shadow: 20px black;
-    background-color: white!important;
     display: block!important;
+}
+
+.p-menu-top-white>.p-menubar {
+    background-color: white!important;
 }
 
 #p-menu-secondary>.p-menubar {
@@ -29,6 +40,10 @@ body {
     display: block!important;
 }
 
+.p-card .p-card-title {
+    font-size: 1rem!important;
+}
+
 @media (max-width: 700px) {
     #p-menu-top>.p-menubar {
         -webkit-box-shadow: 0px 8px 6px -3px rgba(0, 0, 0, 0.13);
@@ -36,17 +51,9 @@ body {
         box-shadow: 0px 8px 6px -3px rgba(0, 0, 0, 0.13);
         border-radius: 0!important;
         box-shadow: 20px black;
-        background-color: white!important;
-        display: contents!important;
+        display: block!important;
     }
-    #p-menu-secondary>.p-menubar {
-        -webkit-box-shadow: 0px 8px 6px -3px rgba(0, 0, 0, 0.13);
-        -moz-box-shadow: 0px 8px 6px -3px rgba(0, 0, 0, 0.13);
-        box-shadow: 0px 8px 6px -3px rgba(0, 0, 0, 0.13);
-        border-radius: 0!important;
-        box-shadow: 20px black;
+    .p-menu-top-white>.p-menubar {
         background-color: white!important;
-        margin-top: 2rem;
-        display: contents!important;
     }
 }

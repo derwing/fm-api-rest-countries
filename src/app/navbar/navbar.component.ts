@@ -1,3 +1,4 @@
+import { ThemeService } from './../services/theme.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { CountriesService } from '../countries-service';
@@ -8,7 +9,10 @@ import { CountriesService } from '../countries-service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  isMobile: boolean = false;
+  orientationStepper: string = 'horizontal';
+  darkModeStatus: boolean = false;
+  theme: string = 'lara-light';
   items: MenuItem[];
   region: {}[] = [{}];
 
@@ -17,7 +21,9 @@ export class NavbarComponent implements OnInit {
   ];
 
 
-  constructor(private countryService: CountriesService) {
+  constructor(
+    private countryService: CountriesService,
+    private themeService: ThemeService) {
     this.items = [
       {
         label: 'File',
@@ -54,6 +60,15 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.detectDevice();
+  }
+
+  detectDevice() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      // true for mobile device
+      this.isMobile = true;
+      this.orientationStepper = 'horizontal';
+    }
 
   }
 
@@ -74,5 +89,21 @@ export class NavbarComponent implements OnInit {
 
     }
   }
+
+  darkMode() {
+    this.darkModeStatus = !this.darkModeStatus;
+    if (this.darkModeStatus) {
+      this.theme = 'lara-dark';
+      this.themeService.switchTheme(this.theme, this.darkModeStatus);
+      var element = document.getElementById('body') as HTMLElement;
+      element.classList.add('dark-mode');
+    } else {
+      this.theme = 'lara-light';
+      this.themeService.switchTheme(this.theme, this.darkModeStatus);
+      var element = document.getElementById('body') as HTMLElement;
+      element.classList.remove('dark-mode');
+    }
+  }
+
 
 }

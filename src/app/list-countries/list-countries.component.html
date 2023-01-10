@@ -13,11 +13,11 @@
             </p-card>
         </div>
         <div *ngFor="let country of allCountriesView" class="col-12 md:col-6 lg:col-3 animate__animated animate__backInLeft">
-            <p-card *ngIf="!isLoading" [header]="country.name.official" class="mt-2 " [style]="{width: '260px'}" styleClass="shadow-2">
+            <p-card *ngIf="!isLoading" [header]="country.name.official" class="mt-2 " [style]="{width: '260px', height: '310px'}" styleClass="shadow-2">
                 <ng-template pTemplate="header">
                     <img class="border-round-top-sm" alt="flag" [src]="country.flags.png" height="150px">
                 </ng-template>
-                <ul>
+                <ul class="pl-0 m-0">
                     <li class="list-none"><span class="font-bold">Population:</span> {{country.population}}</li>
                     <li class="list-none"><span class="font-bold">Region:</span> {{country.region}}</li>
                     <li class="list-none"><span class="font-bold">Capital:</span> {{country.capital}}</li>

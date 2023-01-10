@@ -1,0 +1,8 @@
+input {
+    text-indent: 1rem;
+    font-size: 1rem;
+}
+
+.fa-moon {
+    transform: rotate(-30deg);
+}
