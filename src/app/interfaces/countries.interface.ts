@@ -8,7 +8,7 @@ export interface RESTCountryResponse {
     independent?: boolean;
     status: Status;
     unMember: boolean;
-    currencies?: Currencies;
+    currencies: Currencies;
     idd: Idd;
     capital?: string[];
     altSpellings: string[];

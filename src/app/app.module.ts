@@ -9,12 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListCountriesComponent } from './list-countries/list-countries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CountryDetailsComponent } from './country-details/country-details.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListCountriesComponent
+    ListCountriesComponent,
+    CountryDetailsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

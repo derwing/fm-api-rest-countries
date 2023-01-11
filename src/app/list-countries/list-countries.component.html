@@ -1,7 +1,8 @@
-<section class="list-countries">
+<app-loading [isLoading]="isLoading"></app-loading>
+<section class="list-countries" *ngIf="!isLoading">
     <div class="grid mx-5 mt-2">
         <div *ngIf="selectedCountry" class="col-12 md:col-6 lg:col-3 animate__animated animate__heartBeat">
-            <p-card *ngIf="!isLoading" [header]="selectedCountry.name.common" class="mt-2" [style]="{width: '260px'}" styleClass="shadow-2">
+            <p-card *ngIf="!isLoading" [header]="selectedCountry.name.common" class="mt-2 cursor-pointer" [style]="{width: '260px'}" styleClass="shadow-2" (click)="openCountry(selectedCountry)">
                 <ng-template pTemplate="header">
                     <img class="border-round-top-sm" alt="flag" [src]="selectedCountry.flags.png" height="150px">
                 </ng-template>
@@ -12,8 +13,8 @@
                 </ul>
             </p-card>
         </div>
-        <div *ngFor="let country of allCountriesView" class="col-12 md:col-6 lg:col-3 animate__animated animate__backInLeft">
-            <p-card *ngIf="!isLoading" [header]="country.name.official" class="mt-2 " [style]="{width: '260px', height: '310px'}" styleClass="shadow-2">
+        <div *ngFor="let country of allCountriesView let i = index" class="col-12 md:col-6 lg:col-3 animate__animated animate__backInLeft">
+            <p-card *ngIf="!isLoading" [header]="country.name.official" class="mt-2 cursor-pointer" [style]="{width: '260px', height: '310px'}" styleClass="shadow-2" (click)="openCountry(country)">
                 <ng-template pTemplate="header">
                     <img class="border-round-top-sm" alt="flag" [src]="country.flags.png" height="150px">
                 </ng-template>

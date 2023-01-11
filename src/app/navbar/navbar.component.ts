@@ -1,7 +1,8 @@
 import { ThemeService } from './../services/theme.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { CountriesService } from '../countries-service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ export class NavbarComponent implements OnInit {
   theme: string = 'lara-light';
   items: MenuItem[];
   region: {}[] = [{}];
+  countryDetails: boolean = false;
 
   selectedRegion = [
     'americas'
@@ -23,7 +25,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private countryService: CountriesService,
-    private themeService: ThemeService) {
+    private themeService: ThemeService,
+    @Inject(DOCUMENT) document: any) {
     this.items = [
       {
         label: 'File',
@@ -61,6 +64,9 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (document.location.href.includes('countryDetails')) {
+      this.countryDetails = true;
+    }
   }
 
   detectDevice() {

@@ -30,7 +30,10 @@ export class ListCountriesComponent implements OnInit, AfterContentChecked {
     if (this.selectedCountry != this.countryService.selectedCountry) {
       this.selectedCountry = this.countryService.selectedCountry
     }
+  }
 
+  openCountry(country: RESTCountryResponse) {
+    this.router.navigateByUrl(`countryDetails/${country.name.common}`);
   }
 
 }

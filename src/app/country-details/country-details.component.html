@@ -1,0 +1,39 @@
+<app-loading [isLoading]="isLoading"></app-loading>
+<section class="mt-4 p-5 justify-content-center" *ngIf="!isLoading">
+    <div class="grid text-start">
+        <div class="col">
+            <button pButton type="button" label="Back" class="p-button-outlined p-button-secondary" icon="pi pi-arrow-left" iconPos="left" (click)="backButton()"></button>
+        </div>
+    </div>
+    <div class="grid text-left mt-5 animate__animated animate__bounceIn" *ngIf="!isLoading">
+        <div class="md:col-3 col-12 mr-5">
+            <img [src]="country.flags.png" alt="country flag">
+        </div>
+        <div class="col text-left">
+            <h2>{{country.name.common}}</h2>
+            <ul class="pl-0 m-0">
+                <div class="grid">
+                    <div class="md:col-3 col-12">
+                        <li class="list-none mb-1">Native Name: {{country.name.common}}</li>
+                        <li class="list-none mb-1">Population: {{country.population}}</li>
+                        <li class="list-none mb-1">Region: {{country.region}}</li>
+                        <li class="list-none mb-1">Sub Region: {{country.subregion}}</li>
+                        <li class="list-none">Capital: {{country.capital}}</li>
+                    </div>
+                    <div class="md:col-9 col-12">
+                        <li class="list-none">Top Level Domain: {{country.tld}}</li>
+                        <li class="list-none">Currencies: <span class="mr-1" *ngFor="let currency of currencies"> {{currency}} </span></li>
+                        <li class="list-none">Languages: <span class="mr-1" *ngFor="let language of languages[0]"> {{language}} </span> </li>
+                    </div>
+                </div>
+                <div *ngIf="borders.length > 0">
+                    <h2>Border Countries:</h2>
+                    <p-chip class="mr-1" *ngFor="let border of borders.slice(0, 3)" [label]="border.common"></p-chip>
+                </div>
+
+
+
+            </ul>
+        </div>
+    </div>
+</section>

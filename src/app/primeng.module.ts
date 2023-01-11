@@ -4,6 +4,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { ChipModule } from 'primeng/chip';
 
 
 
@@ -14,13 +16,17 @@ import { CardModule } from 'primeng/card';
     MenubarModule,
     DropdownModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    ButtonModule,
+    ChipModule
   ],
   exports: [
     MenubarModule,
     DropdownModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    ButtonModule,
+    ChipModule
   ]
 })
 export class PrimengModule { }

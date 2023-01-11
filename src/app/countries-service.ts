@@ -38,7 +38,13 @@ export class CountriesService {
   }
 
   searchCountryByName(countryName: string) {
+    console.log('esto llega', countryName);
     return this.httpClient.get<RESTCountryResponse[]>(`https://restcountries.com/v3.1/name/${countryName}`);
 
   }
+
+  getCountryByCode(code: string) {
+    return this.httpClient.get<RESTCountryResponse[]>(`https://restcountries.com/v3.1/alpha/${code}`);
+  }
+
 }
